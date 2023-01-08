@@ -43,6 +43,7 @@ public class NewAgeTellerDesign extends JFrame implements ActionListener
 
         birthDate = new JTextField();
         birthDate.setBounds(310,30,200,30);
+        birthDate.setFont(new Font("Tahoma",Font.BOLD,16));
         add(birthDate);
 
         calc = new JButton();
