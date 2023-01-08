@@ -26,6 +26,7 @@ public class NewAgeTellerDesign extends JFrame implements ActionListener
     void createFrame()
     {
         setSize(600,300);
+        setTitle("Age Calculator");
     }
     void frameDetails()
     {
