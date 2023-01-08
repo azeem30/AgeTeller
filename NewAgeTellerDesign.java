@@ -9,7 +9,7 @@ import java.time.Period;
 
 public class NewAgeTellerDesign extends JFrame implements ActionListener
 {
-    JLabel birthLabel,ageLabel;
+    JLabel birthLabel,ageLabel,errorLabel;
     public JTextField birthDate;
     JButton calc;
     String dob,ageOfUser;
@@ -56,6 +56,10 @@ public class NewAgeTellerDesign extends JFrame implements ActionListener
         ageLabel.setBounds(120,130,360,30);
         ageLabel.setFont(new Font("Tahoma",Font.BOLD,16));
         add(ageLabel);
+
+        errorLabel = new JLabel();
+        errorLabel.setBounds(310,60,200,30);
+        add(errorLabel);
     }
     public static void main(String[] args) {
         new NewAgeTellerDesign();
@@ -65,8 +69,16 @@ public class NewAgeTellerDesign extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == calc)
         {
+            try
+            {
             calculateAge();
+            }
+            catch (Exception exc)
+            {
+                errorLabel.setText("Please input valid Date of Birth!");
+            }
         }
+
     }
     void calculateAge()
     {
@@ -77,6 +89,7 @@ public class NewAgeTellerDesign extends JFrame implements ActionListener
     }
     void getUserDateOfBirth()
     {
+
         dob = birthDate.getText();
     }
     void convertStringToDateObject()
