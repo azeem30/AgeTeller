@@ -109,7 +109,11 @@ public class NewAgeTellerDesign extends JFrame implements ActionListener
     }
     void outputAge()
     {
-        ageOfUser = "You are "+years+ " years "+months+ " months "+" and "+days+" days old!";
+        ageOfUser = "You are "+years+ " years "+months+ " months and "+days+" days old!";
         ageLabel.setText(ageOfUser);
+        if(months ==0 && days ==0)
+        {
+            JOptionPane.showMessageDialog(null,"Happy Birthday to You!");
+        }
     }
 }
